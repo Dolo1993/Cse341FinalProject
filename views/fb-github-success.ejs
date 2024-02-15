@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Social Auth</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <!-- load bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- load fontawesome -->
+    <style>
+      body {
+        padding-top: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="text-primary text-center">
+          <span class="fa fa-user"></span>
+        </h1>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <p>
+                <strong>Id</strong>: <%= user.id %><br />
+                <strong>Name</strong>: <%= user.displayName %><br />
+                <strong>Provider</strong>: <%= user.provider %>
+              </p>
+              <img src="<%= user.thumbnail %>" alt="Thumbnail" width="100" height="100">
+            </div>
+            <div>
+               <!-- For GitHub -->
+              <a href="/auth/github/signout" class="btn btn-dark">
+              <span class="fa fa-sign-out"></span> Sign Out from GitHub</a>
+            </div> 
+            <div> 
+              <!-- For Facebook -->
+              <!-- <a href="/auth/facebook/signout" class="btn btn-warning">
+              <span class="fa fa-sign-out"></span> Sign Out from Facebook</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

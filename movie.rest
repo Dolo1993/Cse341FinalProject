@@ -1,0 +1,47 @@
+
+### This is the movies rest file
+### Get's all the movies.
+GET http://localhost:5000/movies
+
+
+### Get's a movie by it's title
+GET http://localhost:5000/movies/
+
+
+### Creates a movie
+POST http://localhost:5000/movies
+Content-Type: application/json
+
+{
+  "title": "Venom",
+  "genre": "Action/Sci-fi",
+  "releaseDate": "2018-10-01",
+  "viewerDiscretion": "16",
+  "productionCompany": "The Imaginarium",
+  "directors": "Ruben Fleischer",
+  "duration": "112m",
+  "language": "English",
+  "boxOffice": 856100000
+}
+
+
+### This is our put request.
+PUT http://localhost:5000/movies/65c4ec2a769bc49c2747fb14
+Content-Type: application/json
+
+{
+  "title": "Venom",
+  "genre": "Action/Sci-fi",
+  "releaseDate": "2018-10-01",
+  "viewerDiscretion": "16",
+  "productionCompany": "The Imaginarium",
+  "directors": "Ruben Fleischer",
+  "duration": "112m",
+  "language": "English",
+  "boxOffice": 856100000
+}
+
+### 
+DELETE http://localhost:3000/movies/65c4ec2a769bc49c2747fb14
+
+

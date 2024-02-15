@@ -1,0 +1,22 @@
+### This rest file is for the cast collection
+
+### Get all cast crew members.
+GET http://localhost:3000/cast/
+
+
+### Get cast member by their fullname
+GET http://localhost:3000/cast/fullname
+
+
+### Create a cast member and save them to mongodb.
+POST http://localhost:3000/cast/
+Content-Type: application/json
+
+{
+    "fullname": "Ralph Fiennes",
+    "dob": "1962-12-22",
+    "pob": "Ipswich",
+    "gender": "Male",
+    "nationality": "English",
+    "biography": "Ralph Nathaniel Twisleton-Wykeham-Fiennes (born 22 December 1962) is an English actor, film producer, and director. A Shakespeare interpreter, he excelled onstage at the Royal National Theatre before having further success at the Royal Shakespeare Company. Widely regarded as one of Britain's most well-known and popular actors, he has received various accolades including a BAFTA Award and a Tony Award, as well as nominations for two Academy Awards and an Emmy Award."
+}
