@@ -4,9 +4,17 @@ const app = express();
 const session = require("express-session");
 const passport = require("passport");
 const cors = require("cors");
+const MongoStore = require("connect-mongo");
+const mongoose = require("mongoose");
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const MongoConnect = require("./database/connect");
+
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -27,11 +35,15 @@ app.use((req, res, next) => {
 
 app.use(
   session({
+    secret: process.env.COOKIE_KEY,
     resave: false,
     saveUninitialized: true,
-    secret: process.env.COOKIE_KEY,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO_URI,
+      ttl: 24 * 60 * 60, // Session TTL in seconds (optional)
+    }),
     cookie: {
-      maxAge: 24 * 60 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000, // 24 hours
     },
   })
 );
