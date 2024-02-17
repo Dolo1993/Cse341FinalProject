@@ -17,18 +17,18 @@ const GoogleUserSchema = mongoose.Schema({
 });
 
 // This is the facebook user schema.
-const FacebookUserSchema = mongoose.Schema({
-  username: String,
-  facebookId: String,
-  thumbnail: String,
-});
+// const FacebookUserSchema = mongoose.Schema({
+//   username: String,
+//   facebookId: String,
+//   thumbnail: String,
+// });
 
 const GithubUser = mongoose.model("github_user", GithubUserSchema);
 const GoogleUser = mongoose.model("google_user", GoogleUserSchema);
-const FacebookUser = mongoose.model("facebook_user", FacebookUserSchema);
+// const FacebookUser = mongoose.model("facebook_user", FacebookUserSchema);
 
 module.exports = {
   GithubUser,
   GoogleUser,
-  FacebookUser,
+  // FacebookUser,
 };

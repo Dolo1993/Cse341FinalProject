@@ -32,12 +32,12 @@
             <div class="col-sm-6">
               <div class="well">
                 <div>
-                  <img src="" alt="profile" />
+                  <img src="<%= profile.thumbnail %>" alt="profile" />
                 </div>
                 <p>
-                  <strong>Id</strong>: <br />
-                  <strong>Email</strong>: <br />
-                  <strong>Name</strong>:
+                  <strong>Id</strong>: <%= profile._id %> <br />
+                  <strong>Email</strong>: <%= profile.email %> <br />
+                  <strong>Name</strong>: <%= profile.username %>
                 </p>
               </div>
               <div>

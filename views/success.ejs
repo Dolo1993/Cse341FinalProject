@@ -19,6 +19,8 @@
 
       img {
         border-radius: 50%;
+        width: 150px; 
+        height: 150px; 
       }
 
       p {
@@ -37,11 +39,16 @@
             <div class="well">
               <div class="">
                 <div>
-                  <img src="<%= profile.photos[0].value %>" alt="profile" />
+                  <% if (profile.photos && profile.photos.length > 0) { %>
+                    <img src="<%= profile.photos[0].value %>" alt="profile" />
+                  <% } else { %>
+                    <!-- Provide a default image or handle the absence of a photo -->
+                    <img src="/default-profile-image.jpg" alt="profile" />
+                  <% } %>
                 </div>
                 <p>
                   <strong>Id</strong>: <%= profile.id %> <br />
-                  <strong>Email</strong>: <%= profile.emails[0].value %><br />
+                  <strong>Email</strong>: <%= profile.emails && profile.emails.length > 0 ? profile.emails[0].value : 'N/A' %><br />
                   <strong>Name</strong>: <%= profile.displayName %>
                 </p>
               </div>
